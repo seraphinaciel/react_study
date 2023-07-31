@@ -9,6 +9,7 @@ import Gallery from '../components/Gallery';
 import Simple from '../components/Simple';
 import reveal from '../components/Reveal';
 import text from '../components/Text';
+import Flip from '../components/Flip';
 
 import '../App.css';
 
@@ -459,6 +460,8 @@ export default function Onepage() {
 
         <hr />
 
+        <Flip />
+        <hr />
         <Moving />
         <Split />
         <Three />

@@ -99,7 +99,7 @@ section.horizontal .animation-wrap .item:nth-child(4n + 4) {
   border: 1px solid red;
 }
 .gBox li {
-  @apply w-full h-full bg-blue-800 absolute top-0 left-0 rounded-xl overflow-hidden;
+  /* @apply w-full h-full bg-blue-800 absolute top-0 left-0 rounded-xl overflow-hidden; */
   background-size: contain;
   img {
     object-fit: contain;

@@ -9,6 +9,8 @@ import ChildPage from './pages/ChildPage';
 import Onepage from './pages/Onepage';
 import Post1 from './pages/Post1';
 
+import Study from './pages/Study';
+
 import Tab from './components/Tab';
 import Split from './components/Split';
 import Hscroll from './components/Hscroll';
@@ -30,6 +32,10 @@ export const menuText = [
   {
     url: '/Onepage',
     title: 'Onepage',
+  },
+  {
+    url: '/Study',
+    title: 'Study',
   },
   {
     url: '/childPage',
@@ -79,6 +85,10 @@ const router = createBrowserRouter([
             element: <Onepage />,
           },
           {
+            path: '/Study',
+            element: <Study />,
+          },
+          {
             path: '/Hscroll',
             element: <Hscroll />,
           },
@@ -110,6 +120,7 @@ const router = createBrowserRouter([
             path: '/Flip',
             element: <Flip />,
           },
+
           {
             path: '/Post1',
             element: <Post1 />,

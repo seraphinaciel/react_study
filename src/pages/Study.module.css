@@ -1,0 +1,34 @@
+.text_reveal {
+  @apply max-w-3xl mx-auto p-8 pt-16;
+  .quote2 {
+    @apply text-6xl/[76px] text-slate-700 dark:text-gray-200 text-center font-black;
+    div {
+      @apply overflow-hidden;
+    }
+    /* span {
+      @apply overflow-hidden;
+    } */
+  }
+}
+
+.movieBox {
+  @apply h-screen flex flex-col items-center justify-center bg-slate-200;
+  .box {
+    @apply w-[20vw] bg-orange-400;
+  }
+  .box-container__smaller .box {
+    @apply w-[100vw] bg-orange-400;
+  }
+  h1 {
+  }
+}
+
+.cBox {
+  @apply h-screen flex flex-col items-center justify-center bg-slate-200 overflow-hidden;
+  div {
+    i {
+      transform: translate(-50%, -50%);
+      @apply bg-red-300 w-[1vw] h-[1vw] fixed top-1/2 left-1/2 rounded-full;
+    }
+  }
+}
