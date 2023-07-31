@@ -5,7 +5,7 @@ import Splitting from 'splitting';
 import 'splitting/dist/splitting.css';
 import 'splitting/dist/splitting-cells.css';
 
-export default function About() {
+export default function Index() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     Splitting();

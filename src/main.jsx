@@ -13,6 +13,9 @@ import Tab from './components/Tab';
 import Split from './components/Split';
 import Hscroll from './components/Hscroll';
 import Three from './components/Three';
+import Gallery from './components/Gallery';
+import Simple from './components/Simple';
+
 import Profile from './pages/Profile';
 import Login from './pages/Login';
 
@@ -25,8 +28,12 @@ export const menuText = [
     title: 'Onepage',
   },
   {
-    url: '/Hscroll',
-    title: 'Hscroll',
+    url: '/Gallery',
+    title: 'Gallery',
+  },
+  {
+    url: '/Simple',
+    title: 'Simple',
   },
   {
     url: '/Three',
@@ -86,6 +93,14 @@ const router = createBrowserRouter([
           {
             path: '/Three',
             element: <Three />,
+          },
+          {
+            path: '/Gallery',
+            element: <Gallery />,
+          },
+          {
+            path: '/Simple',
+            element: <Simple />,
           },
           {
             path: '/Post1',

@@ -31,6 +31,18 @@ const ThreeD = () => {
     controls.update();
 
     scene.background = new THREE.Color(0x1a1a1a);
+    // let light;
+    // let material;
+
+    // if (document.querySelector('#wrap').className === 'dark') {
+    //   scene.background = new THREE.Color(0x1a1a1a);
+    //   light = new THREE.DirectionalLight(0xb8b8b8, 1);
+    //   material = new THREE.MeshStandardMaterial({ color: 0x1a1a1a });
+    // } else {
+    //   scene.background = new THREE.Color('#d5e6f5');
+    //   light = new THREE.DirectionalLight('#a3cca2', 1);
+    //   material = new THREE.MeshStandardMaterial({ color: '' });
+    // }
 
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -49,7 +61,8 @@ const ThreeD = () => {
     const geometry2 = new THREE.BoxGeometry(1, 3.5, 1);
     const geometry3 = new THREE.BoxGeometry(3, 1, 1);
     const geometry4 = new THREE.BoxGeometry(1, 0.5, 1);
-    const material = new THREE.MeshStandardMaterial({ color: 0x1a1a1a });
+
+    let material = new THREE.MeshStandardMaterial({ color: 0x1a1a1a });
     const mesh1 = new THREE.Mesh(geometry1, material);
     const mesh2 = new THREE.Mesh(geometry2, material);
     const mesh3 = new THREE.Mesh(geometry3, material);
@@ -131,7 +144,7 @@ const ThreeD = () => {
   return (
     <div ref={mountRef} id="theJ" className="relative -z-10">
       <div className="fixed inset-x-0 inset-y-0 flex justify-center items-center">
-        <p className="text-white text-9xl text-center p-8">hello</p>
+        <p className="text-neutral-800 text-9xl text-center p-8">hello</p>
       </div>
     </div>
   );
