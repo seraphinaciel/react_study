@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
-export default function About() {
+export default function Tab() {
   useEffect(() => {
     gsap.registerPlugin(ScrollToPlugin);
 

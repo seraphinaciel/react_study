@@ -17,6 +17,8 @@ import GalleryTest from './components/GalleryTest';
 import Gallery from './components/Gallery';
 import Hsnap from './components/Hsnap';
 import Simple from './components/Simple';
+import Text from './components/Text';
+import Flip from './components/Flip';
 
 import Profile from './pages/Profile';
 import Login from './pages/Login';
@@ -99,6 +101,14 @@ const router = createBrowserRouter([
           {
             path: '/Simple',
             element: <Simple />,
+          },
+          {
+            path: '/Text',
+            element: <Text />,
+          },
+          {
+            path: '/Flip',
+            element: <Flip />,
           },
           {
             path: '/Post1',

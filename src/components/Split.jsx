@@ -16,8 +16,8 @@ export default function Index() {
         text.querySelectorAll('.word'),
         {
           willChange: 'opacity',
-          opacity: 0,
-          y: '40%',
+          opacity: 0.1,
+          // y: '40%',
         },
         {
           opacity: 1,

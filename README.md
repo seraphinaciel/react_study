@@ -131,6 +131,8 @@ tl.to('.box1', { duration: 2, x: 100 }) //notice that there's no semicolon!
 
 [more](https://greensock.com/docs/v3/Plugins/ScrollTrigger)
 
+> 스크롤 기반 애니메이션 만들기.
+> 스크롤과 관련된 모든 항목을 트리거 함
 > ScrollTrigger를 애니메이션에 직접 넣을 필요는 없습니다(아마도 가장 일반적인 사용 사례일 것입니다). 무엇이든 콜백을 사용하십시오.
 
 ```jsx
@@ -201,6 +203,12 @@ ScrollTrigger.create({
 - `scrub` : 애니메이션에 대한 작업(재생, 일시 중지, 재개, 재시작, 역방향, 완료, 재설정) 수행
 - `getVelocity()` : 속도를 기준으로 애니메이션의 특정 지점으로 스냅
 - `toggleClass` : css 클래스를 추가/삭제
+
+## Scroll to Plugin
+
+> 스크롤 위치에 애니메이션 적용
+
+[more](https://greensock.com/docs/v3/Plugins/ScrollToPlugin)
 
 # Splitting
 
@@ -587,3 +595,46 @@ footer {
   padding: var(--blockPadding) max(2rem, 50vw - var(--contentWidth) / 2);
 }
 ```
+
+<!--
+TextPlugin 반복시키는 것
+export default function Text(textParagraph) {
+  const containersRef = useRef([]);
+
+  useEffect(() => {
+    gsap.registerPlugin(TextPlugin);
+
+    function machineGun(container, text) {
+      .
+      .
+      .
+    }
+
+    const containers = containersRef.current;
+
+    textParagraph.forEach((item) => {
+      const container = document.getElementById(item.no);
+      containers.push(container);
+      machineGun(container, item.txt);
+    });
+  });
+  const dlsi = [
+    {
+      no: 'no1',
+      txt: 'These words are constantly',
+    },
+    {
+      no: 'no2',
+      txt: 'hello happy puppy',
+    },
+    // Add more objects to the `dlsi` array as needed
+  ];
+  return (
+    <>
+      {dlsi.map((item) => (
+        <div className="demo" id={item.no} key={item.no}></div>
+      ))}
+    </>
+  );
+}
+ -->

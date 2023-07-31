@@ -8,6 +8,7 @@ import hsnap from '../components/Hsnap';
 import Gallery from '../components/Gallery';
 import Simple from '../components/Simple';
 import reveal from '../components/Reveal';
+import text from '../components/Text';
 
 import '../App.css';
 
@@ -62,26 +63,19 @@ function Tab() {
   tab();
 
   return (
-    <section className="snb p-8">
-      <ul className="snb-button flex justify-center gap-2 sticky top-20 w-full">
+    <section className="snb">
+      <ul className="snb-button">
         {posts.map((post) => (
           <li key={post.id}>
-            <button
-              id={`${post.id}btn`}
-              className="bg-teal-900 text-white font-bold text-xs md:text-base rounded-md p-2 px-4"
-            >
-              {post.id}
-            </button>
+            <button id={`${post.id}btn`}>{post.id}</button>
           </li>
         ))}
       </ul>
-      <div className="snb-wrap mt-20 text-lg/loose font-thin">
+      <div className="snb-wrap">
         {posts.map((post) => (
           <div key={post.id}>
-            <h2 id={post.id} className="text-2xl text-red-400 font-bold">
-              {post.id}
-            </h2>
-            <p className="dark:text-gray-400">{post.context}</p>
+            <h2 id={post.id}>{post.id}</h2>
+            <p>{post.context}</p>
           </div>
         ))}
       </div>
@@ -116,7 +110,7 @@ function Split() {
         </div>
 
         <div
-          className="text-3xl/loose bg-slate-100 dark:bg-transparent dark:text-white p-8"
+          className="text-5xl/loose bg-slate-100 dark:bg-transparent dark:text-white p-8"
           data-splitting=""
           data-effect-typing=""
         >
@@ -436,9 +430,27 @@ function Reveal() {
   );
 }
 
+function Text() {
+  const textParagraph = [
+    {
+      no: 'bad',
+      txt: 'bad good hello happy puppy',
+    },
+  ];
+  text(textParagraph);
+  return (
+    <>
+      {textParagraph.map((item) => (
+        <div className="demo" id={item.no} key={item.no}></div>
+      ))}
+    </>
+  );
+}
+
 export default function Onepage() {
   return (
     <div className="dark">
+      <Text />
       <section className="basic-width">
         <h1>간단한 시차 애니메이션 효과</h1>
         <Simple />
@@ -457,9 +469,9 @@ export default function Onepage() {
           스크롤되는 탭
         </blockquote>
         <Tab />
-
-        <hr />
-
+      </section>
+      <hr />
+      <section>
         <h1>Horizontal scroll</h1>
         <blockquote>
           <h2>수평 스냅 섹션</h2>
