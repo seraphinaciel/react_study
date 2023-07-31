@@ -13,19 +13,18 @@ const BoxContainer = ({ id, imgSrc, alt }) => {
         trigger: `.box-container__${id}`,
         start: 'top top',
         end: '+=100%',
-        markers: true,
         pin: true,
         scrub: true,
       },
     });
 
-    let scale = 0;
-    id === 'bigger' ? (scale = 5) : (scale = 1);
+    let scale = id === 'bigger' ? 5 : 1;
     tlbigger
       .to('body', { duration: 1 })
       .to('.box', { scale: scale, duration: 4, ease: 'none' })
       .to('body', { duration: 1 });
 
+    console.log(id);
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };

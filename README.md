@@ -139,3 +139,8 @@ import Splitting from 'splitting';
 
 Splitting();
 ```
+
+### SVG
+
+https://css-tricks.com/scroll-drawing/
+https://jakearchibald.com/2013/animated-line-drawing-svg/

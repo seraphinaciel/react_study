@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from '../Study.module.css';
 
+// 흩어졌다가 스크롤 하면 뭉쳐!
 export default function ImgSplit() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);

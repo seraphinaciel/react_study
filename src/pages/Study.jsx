@@ -10,15 +10,20 @@ import TextTyping from './study/TextTyping';
 import BoxContainer from './study/BoxContainer';
 import CircleBox from './study/CircleBox';
 
-import ImgSplit from './study/ImgSplit';
+// import ImgSplit from './study/ImgSplit';
 import TextLR from './study/TextLR';
+
+import SvgLine from './study/SvgLine';
 
 export default function Study() {
   return (
     <>
-      <ImgSplit />
-      <TextLR />
-
+      <div className="h-screen"></div>
+      <SvgLine />
+      {/* <ImgSplit /> */}
+      <div className="h-screen"></div>
+      <TextLR id="out" conLeft="GET ON THE" conRight="ELEVATOR" />
+      <TextLR id="in" conLeft="Apple is" conRight="expensive" />
       <BoxContainer
         id="bigger"
         imgSrc="/images/img-01.jpg"
@@ -63,7 +68,6 @@ export default function Study() {
           reality we experience is not necessarily the truth."
       />
       <CircleBox imgSrc="/images/vite.svg" />
-
       <div className="h-screen"></div>
       <div className="cursor"></div>
     </>
