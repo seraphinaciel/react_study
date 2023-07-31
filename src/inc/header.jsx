@@ -1,18 +1,7 @@
+import { menuText, dropText } from '../main';
 import PropTypes from 'prop-types';
 // prop 유효성 검사 추가 : 코드 안정성, 유지 관리성을 개선하고 개발 프로세스 초기에 오류를 포착하는 데 도움이 됨. React 구성 요소의 견고성을 보장하기 위해 권장되는 방법.
 import { NavLink } from 'react-router-dom';
-
-const menuText = [
-  { title: 'main', url: '/' },
-  { title: 'error', url: '/error' },
-  { title: 'about', url: '/about' },
-  { title: 'childPage', url: '/childPage' },
-];
-
-const dropText = [
-  { title: 'Login', url: '/Login' },
-  { title: 'Profile', url: '/Profile' },
-];
 
 {
   /* Mobile menu button */

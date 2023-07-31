@@ -1,73 +1,6 @@
 import reactLogo from '/images/react.svg';
+
 import viteLogo from '/images/vite.svg';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
-import 'splitting/dist/splitting.css';
-import 'splitting/dist/splitting-cells.css';
-import Splitting from 'splitting';
-
-const splitContent = [
-  ...document.querySelectorAll(
-    '.content__title[data-splitting][data-effect16]'
-  ),
-];
-
-// ↓ 작동 안됨!
-// GSAP Scroll Triggers
-const scroll = () => {
-  console.log('heheh');
-  splitContent.forEach((title) => {
-    gsap.fromTo(
-      title,
-      {
-        transformOrigin: '0% 50%',
-        rotate: 3,
-      },
-      {
-        ease: 'none',
-        rotate: 0,
-        scrollTrigger: {
-          trigger: title,
-          start: 'top bottom',
-          end: 'top top',
-          scrub: true,
-        },
-      }
-    );
-
-    gsap.fromTo(
-      title.querySelectorAll('.word'),
-      {
-        'will-change': 'opacity',
-        opacity: 0.1,
-      },
-      {
-        ease: 'none',
-        opacity: 1,
-        stagger: 0.05,
-        scrollTrigger: {
-          trigger: title,
-          start: 'top bottom-=20%',
-          end: 'center top+=20%',
-          scrub: true,
-        },
-      }
-    );
-  });
-};
-
-// GSAP Scroll Triggers
-window,
-  addEventListener('load', () => {
-    Splitting();
-    // ↓ 작동 안됨!
-
-    window.addEventListener('scroll', () => {
-      ScrollTrigger.update();
-    });
-    scroll();
-  });
 
 export default function About() {
   return (
@@ -76,11 +9,7 @@ export default function About() {
         Hello, This is about page!
       </h1>
 
-      <div
-        className="content__title content__title--left text-7xl/snug"
-        data-splitting=""
-        data-effect16=""
-      >
+      <div className="content__title content__title--left text-7xl/snug">
         <p>
           As human beings, we often find ourselves feeling out of place in the
           world around us. We sense that something is not quite right, that the
@@ -124,6 +53,14 @@ export default function About() {
           </figcaption>
         </figure>
       </article>
+
+      <ul className="boxcon">
+        <li>
+          <div className="box1">box1</div>
+          <div className="box2">box2</div>
+        </li>
+      </ul>
+
       <div>
         <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
           <img src={viteLogo} className="logo" alt="Vite logo" />
