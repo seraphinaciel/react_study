@@ -8,6 +8,9 @@ import Index from './pages/Index';
 import About from './pages/About';
 import About2 from './pages/About2';
 import ChildPage from './pages/ChildPage';
+import Onepage from './pages/Onepage';
+import Hscroll from './pages/Hscroll';
+import Three from './pages/Three';
 import Profile from './pages/Profile';
 import Login from './pages/Login';
 import Post1 from './content/Post1';
@@ -16,21 +19,29 @@ import Post1 from './content/Post1';
 
 export const menuText = [
   { url: '/', title: 'Index' },
+  // {
+  //   url: '/about',
+  //   title: 'About',
+  // },
+  // {
+  //   url: '/about2',
+  //   title: 'About2',
+  // },
+  // {
+  //   url: '/childPage',
+  //   title: 'ChildPage',
+  // },
+  // {
+  //   url: '/Post1',
+  //   title: 'Post1',
+  // },
   {
-    url: '/about',
-    title: 'About',
+    url: '/Onepage',
+    title: 'Onepage',
   },
   {
-    url: '/about2',
-    title: 'About2',
-  },
-  {
-    url: '/childPage',
-    title: 'ChildPage',
-  },
-  {
-    url: '/Post1',
-    title: 'Post1',
+    url: '/Hscroll',
+    title: 'Hscroll',
   },
 ];
 export const dropText = [
@@ -66,6 +77,18 @@ const router = createBrowserRouter([
           {
             path: '/childPage',
             element: <ChildPage />,
+          },
+          {
+            path: '/Onepage',
+            element: <Onepage />,
+          },
+          {
+            path: '/Hscroll',
+            element: <Hscroll />,
+          },
+          {
+            path: '/Three',
+            element: <Three />,
           },
           {
             path: '/Post1',

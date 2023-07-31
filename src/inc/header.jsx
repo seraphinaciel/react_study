@@ -161,7 +161,7 @@ function Dropdown() {
 
 window,
   addEventListener('load', () => {
-    const nav = document.querySelector('nav');
+    const nav = document.querySelector('header');
     const navTop = nav.offsetHeight;
     function navFixed() {
       if (window.scrollY > navTop) {
@@ -203,7 +203,6 @@ export default function Nav() {
   }
 
   function handleOPen() {
-    console.log(2);
     let button = document.querySelector('#user-menu-button');
     const menuContent = document.querySelector('#user-menu-content');
 
@@ -219,8 +218,8 @@ export default function Nav() {
   }
   return (
     <>
-      <nav className="transition ease-in-out duration-150 z-50 not-fixed">
-        <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <header className="transition ease-in-out duration-150 z-50 sticky -top-3 pt-3 inset-x-0 not-fixed">
+        <nav className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
               <Menu onClick={handleClick} />
@@ -264,8 +263,8 @@ export default function Nav() {
               </div>
             </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </header>
     </>
   );
 }

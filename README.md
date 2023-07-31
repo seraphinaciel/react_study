@@ -1,3 +1,96 @@
+# React
+
+## Fragment
+
+```jsx
+import { Fragment } from 'react';
+// 2. key 사용 해야 할 때
+.
+.
+export default function About() {
+  return (
+    <>
+      <Snb />
+      // 1. Fragment 축약형 (key 사용 불가) : import 필요 없음
+      <div className="snb-wrap mt-20 text-lg/loose font-thin">
+        {posts.map((post) => (
+          <Fragment key={post.id}>
+            {/* 2. key 사용해야 할 때 : import 추가*/}
+            <h2 id={post.id} className="text-2xl text-red-400 font-bold">
+              {post.id}
+            </h2>
+            <p>{post.context}</p>
+          </Fragment>
+        ))}
+      </div>
+    </>
+  );
+}
+```
+
+## HOOK ( useRef, useEffect )
+
+```jsx
+export default function About() {
+  const circleRef = useRef(null);
+  /**
+   * `useRef(null)`는 `circleRef`를 `null`로 초기화하여 초기에 특정 요소를 참조하지 않음을 나타냄
+   * 선택기 문자열(`'#thirdCircle'`) 대신 `circleRef.current`를 사용하면 `circleRef`가 참조하는 실제 DOM 요소에 대한 작업 또는 애니메이션을 수행할 수 있다.
+   */
+
+  useEffect(() => {
+    gsap.to(circleRef.current, {
+      x: 100,
+      duration: 2,
+      ease: 'bounce',
+      delay: 1,
+      scrollTrigger: {
+        trigger: circleRef.current,
+      },
+    });
+    // 구성 요소가 마운트 해제될 때 모든 ScrollTrigger를 제거.
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+```
+
+### useRef
+
+> `useRef` 후크는 기능 구성요소의 재렌더링 전체에서 값을 유지할 수 있게 해주는 기본 제공 React 후크
+
+> `circleRef`는 DOM 요소에 대한 가변 참조를 생성하는 `useRef` 후크, `ref` 속성이 있는 HTML 요소를 참조하는 데 사용
+
+### useEffect
+
+> 컴포넌트가 랜더링 될 때마다 특정 작업(side effect)를 실행
+
+1. 컴포넌트 mount(나타남) : `useEffect(() => {...}, [])`
+
+   > 효과가 끝나면 반환, 구성 요소가 마운트 해제될 때 애니메이션과 ScrollTrigger가 제대로 정리
+
+   > 구성요소 마운트 시 애니메이션을 한 번만 트리거하는 빈 종속성 배열(애니메이션과 ScrollTrigger가 한 번만 설정되고 다시 렌더링할 때마다 반복되지 않음.)
+
+2. 컴포넌트 업데이터(props, state 업뎃) : `useEffect(() => {...}, [deps])`
+
+   > deps : 배열 형태로, 함수를 실행시킬 조건으로 특정 값을 넣으면 '컴포넌트가 mount 될 때' 또는 '특정 값이 업데이트 될 때' useEffect를 실행한다.
+
+3. Cleanup function: `useEffect(() => {... return () => {...}}, [])`
+
+- Component가 Unmount 되었을 때(사라질 때) & Update 되기 직전에 이벤트 처리 삭제.
+- 모든 리소스/구독을 **정리**하는데 좋은 방법이며 앱의 **성능을 최적화** 하는데 도움된다.
+- Unmount 될 때만 cleanup 함수를 실행시키고 싶다면 deps에 빈 배열,
+  특정 값이 업데이트되기 직전에 cleanup 함수를 실행시키고 싶다면 deps에 해당 값을 넣어주면 됨.
+
+# Green Sock
+
+```jsx
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+```
+
 # Plugin
 
 - icon :
