@@ -26,9 +26,114 @@
 .cBox {
   @apply h-screen flex flex-col items-center justify-center bg-slate-200 overflow-hidden;
   div {
-    i {
-      transform: translate(-50%, -50%);
-      @apply bg-red-300 w-[1vw] h-[1vw] fixed top-1/2 left-1/2 rounded-full;
+    @apply flex flex-col justify-center items-center;
+    em {
+      @apply flex justify-center items-center w-10 h-10 rounded-full bg-yellow-300 z-50;
+      img {
+        @apply max-w-full;
+        animation: rotateCircle 10s linear infinite;
+      }
     }
+    i {
+      @apply block bg-black w-[1vw] h-[1vw] rounded-full absolute;
+    }
+  }
+}
+@keyframes rotateCircle {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.transition {
+  @apply overflow-hidden py-8 justify-center items-center relative;
+  .transition_wrap {
+    .transition_item {
+      @apply flex flex-nowrap justify-center items-center;
+      span {
+        @apply text-8xl p-6 uppercase text-gray-600;
+      }
+    }
+  }
+}
+
+.banner {
+  @apply overflow-hidden py-8 justify-center items-center relative;
+  .banner_wrap {
+    @apply bg-gray-300;
+    .banner_container {
+      @apply flex flex-nowrap items-center;
+      justify-content: var(--align);
+      .banner_items {
+        @apply flex flex-nowrap flex-none;
+        animation: moving 5s linear infinite;
+        span {
+          @apply border text-8xl p-6 block;
+          &:nth-of-type(2) {
+            @apply bg-pink-300;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes moving {
+  0% {
+    transform: translateX(calc(var(--start) * -1));
+    /* transform: translateX(-557px); */
+  }
+  100% {
+    transform: translateX(calc(var(--end) * 1));
+    /* transform: translateX(577); */
+  }
+}
+
+.textTyping {
+  @apply text-5xl/loose bg-slate-100 dark:bg-transparent dark:text-white p-8;
+}
+
+.imgSplit {
+  img {
+    @apply w-6/12;
+  }
+}
+
+.elevator {
+  margin: 5em 0;
+  color: #000;
+  font-size: 3em;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+}
+.elevatorL {
+  text-align: right;
+  left: 5em;
+  /* animation: moveLeft 0.7s forwards;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s); */
+}
+.elevatorR {
+  left: 10em;
+  /* animation: moveRight 0.7s forwards;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s); */
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0px) rotate(0);
+  }
+  100% {
+    transform: translateX(-50em);
+  }
+}
+@keyframes moveRight {
+  0% {
+    transform: translateX(0px) rotate(0);
+  }
+  100% {
+    transform: translateX(50em);
   }
 }
