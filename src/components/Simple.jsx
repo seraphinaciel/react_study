@@ -32,31 +32,21 @@ export default function Index() {
   }, []);
 
   return (
-    <>
-      <h1 className="header-section">
-        Scroll down to see some parallax effects
-      </h1>
-
-      <section className="pSection">
-        <div className="container">
-          <div className="pContent">
-            <p>
-              This is a super simple example of how to create a basic parallax
-              effect using GSAPs ScrollTrigger!
-            </p>
-            <p>
-              For more information about ScrollTrigger, check out the GreenSock
-              website.
-            </p>
-          </div>
+    <section className="pSection">
+      <div className="container">
+        <div className="pContent">
+          <p>
+            This is a super simple example of how to create a basic parallax
+            effect using GSAPs ScrollTrigger!
+          </p>
+          <p>
+            For more information about ScrollTrigger, check out the GreenSock
+            website.
+          </p>
         </div>
+      </div>
 
-        <img
-          className="pImage"
-          src="https://picsum.photos/1200/526?random=1"
-          alt="Filler image"
-        />
-      </section>
-    </>
+      <img className="pImage" src="/images/img-01.jpg" alt="Filler image" />
+    </section>
   );
 }

@@ -4,9 +4,10 @@ import split from '../components/Split';
 import Moving from '../components/Moving';
 import Three from '../components/Three';
 import hscroll from '../components/Hscroll';
-// import Gallery from '../components/Gallery';
-import Gallery2 from '../components/Gallery2';
+import hsnap from '../components/Hsnap';
+import Gallery from '../components/Gallery';
 import Simple from '../components/Simple';
+import reveal from '../components/Reveal';
 
 import '../App.css';
 
@@ -61,35 +62,30 @@ function Tab() {
   tab();
 
   return (
-    <article className="basic-width">
-      <h1 className="underline underline-offset-4 decoration-red-700 text-red-700 text-5xl">
-        anchor scroll
-      </h1>
-      <section className="snb bg-sky-100 p-8">
-        <ul className="snb-button flex justify-center gap-2 sticky top-20 w-full">
-          {posts.map((post) => (
-            <li key={post.id}>
-              <button
-                id={`${post.id}btn`}
-                className="bg-teal-900 text-white font-bold text-xs md:text-base rounded-md p-2 px-4"
-              >
-                {post.id}
-              </button>
-            </li>
-          ))}
-        </ul>
-        <div className="snb-wrap mt-20 text-lg/loose font-thin">
-          {posts.map((post) => (
-            <div key={post.id}>
-              <h2 id={post.id} className="text-2xl text-red-400 font-bold">
-                {post.id}
-              </h2>
-              <p>{post.context}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-    </article>
+    <section className="snb p-8">
+      <ul className="snb-button flex justify-center gap-2 sticky top-20 w-full">
+        {posts.map((post) => (
+          <li key={post.id}>
+            <button
+              id={`${post.id}btn`}
+              className="bg-teal-900 text-white font-bold text-xs md:text-base rounded-md p-2 px-4"
+            >
+              {post.id}
+            </button>
+          </li>
+        ))}
+      </ul>
+      <div className="snb-wrap mt-20 text-lg/loose font-thin">
+        {posts.map((post) => (
+          <div key={post.id}>
+            <h2 id={post.id} className="text-2xl text-red-400 font-bold">
+              {post.id}
+            </h2>
+            <p className="dark:text-gray-400">{post.context}</p>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -111,9 +107,8 @@ function Split() {
         omnis, saepe fugiat expedita et quae iusto eveniet molestiae obcaecati
       </div>
 
-      <h1>split text, scroll trigger</h1>
-
       <article className="border">
+        <h1>split text, scroll trigger</h1>
         <div className="max-w-3xl mx-auto p-8 pt-16">
           <div className="quote" data-splitting="" data-effect-reveal="">
             <p>Design is intelligence made&nbsp;visible.</p>
@@ -284,11 +279,6 @@ function Hscroll() {
   ];
   return (
     <>
-      <section className="basic-width bg-stone-700">
-        <h2>ScrollTrigger Bi-Directional Fake Horizontal Scroll</h2>
-        <p>...</p>
-      </section>
-
       <section className="horizontal ">
         <div className="pin-wrap">
           <div className="to-right">
@@ -299,11 +289,6 @@ function Hscroll() {
             ))}
           </div>
         </div>
-      </section>
-
-      <section className="basic-width bg-stone-700">
-        <h2>Nothing to see here...</h2>
-        <p>...</p>
       </section>
 
       <section className="horizontal ">
@@ -321,21 +306,183 @@ function Hscroll() {
   );
 }
 
-export default function Onepage() {
+function Hsnap() {
+  hsnap();
+  const colorBox = [
+    {
+      txt: 'ONE',
+      name: 'Comet',
+      rgb: `#5C5980`,
+    },
+    {
+      txt: 'TWO',
+      name: 'East Side',
+      rgb: `#BB97CA`,
+    },
+    {
+      txt: 'THREE',
+      name: 'Martinique',
+      rgb: `#403650`,
+    },
+    {
+      txt: 'FOUR',
+      name: 'Silver Tree',
+      rgb: `#73B08B`,
+    },
+    {
+      txt: 'FIVE',
+      name: 'Moon Raker',
+      rgb: `#D7CDF5`,
+    },
+  ];
+
   return (
     <>
-      <section className="dark" id="wrap">
-        {/* 어두울 때 .dark */}
-        <div className="basic-width">
-          <Moving />
-          <Split />
-          <Simple />
-          <Three />
-          <Tab />
+      <div className="overflow-hidden">
+        <div className="ccon">
+          {colorBox.map(({ txt, name, rgb }) => (
+            <section
+              className="panel"
+              key={txt}
+              style={{ backgroundColor: `${rgb}` }}
+            >
+              {txt} {name}
+            </section>
+          ))}
         </div>
-        <Gallery2 />
+      </div>
+    </>
+  );
+}
+
+function Reveal() {
+  reveal();
+  const features = [
+    {
+      imageSrc: '/images/img-07.jpg',
+      heading: 'Create amazing SVG animations',
+      description:
+        "DrawSVGPlugin allows you to progressively reveal (or hide) SVG strokes to make them look like they're being drawn. MorphSVGPlugin to Morph any SVG shape into any other shape smoothly regardless of the number of points in each. MotionPathPlugin allows you to easily move any object along a path.",
+      revealClass: 'gs_reveal_fromLeft',
+    },
+    {
+      imageSrc: '/images/img-04.jpg',
+      heading: 'Supercharge immersive WebGL experiences',
+      description:
+        'GreenSock is used in some of the most popular Three.js powered WebGL projects. Animate any object in a scene. PixiPlugin makes animating Pixi.js objects with GSAP a breeze. Animate position, scale, color effects and more with all the power and control of GSAP and the rendering speed of Pixi.js.',
+      revealClass: 'gs_reveal_fromRight',
+    },
+    {
+      imageSrc: '/images/img-05.jpg',
+      heading: 'Control performant Canvas animations',
+      description:
+        "GSAP makes animating with Canvas even easier by providing an easier way to look and sequence animations. GSAP works great with Adobe Animate and EaseJS through GSAP's EaselJSPlugin.",
+      revealClass: 'gs_reveal_fromLeft',
+    },
+    {
+      imageSrc: '/images/img-06.jpg',
+      heading: 'Award winning websites',
+      description:
+        'GSAP is used on over 8,500,000 sites and over 1,000 sites featured on Awwwards. For some of our favorites, check out our showcase.',
+      revealClass: 'gs_reveal_fromRight',
+    },
+  ];
+
+  return (
+    <>
+      <blockquote>
+        <h2>version 1</h2>
+      </blockquote>
+      <div className="revealCon">
+        {features.map((feature, index) => (
+          <div
+            className={`feature gs_reveal ${feature.revealClass}`}
+            key={index}
+          >
+            <div className="imgBox">
+              <div className="card">
+                <img src={feature.imageSrc} alt="" />
+              </div>
+            </div>
+
+            <div className="txtBox">
+              <h3>{feature.heading}</h3>
+              <p>{feature.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <blockquote>
+        <h2>version 2</h2>
+      </blockquote>
+      <div className="revealCon ver2">
+        {features.map((feature, index) => (
+          <div className="feature" key={index}>
+            <div className={`imgBox gs_reveal ${feature.revealClass}`}>
+              <div className="card">
+                <img src={feature.imageSrc} alt="" />
+              </div>
+            </div>
+
+            <div className="txtBox">
+              <h3 className="gs_reveal">{feature.heading}</h3>
+              <p className="gs_reveal">{feature.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+export default function Onepage() {
+  return (
+    <div className="dark">
+      <section className="basic-width">
+        <h1>간단한 시차 애니메이션 효과</h1>
+        <Simple />
+        <hr />
+        <Reveal />
+
+        <hr />
+
+        <Moving />
+        <Split />
+        <Three />
+        {/* three.js로 만들어진 J 모션 */}
+        <h1>Anchor Scroll</h1>
+        <blockquote>
+          <h2>ScrollToPlugin</h2>
+          스크롤되는 탭
+        </blockquote>
+        <Tab />
+
+        <hr />
+
+        <h1>Horizontal scroll</h1>
+        <blockquote>
+          <h2>수평 스냅 섹션</h2>
+          속도에 따라 동적으로 스냅되며 스냅은 모멘텀이 적용된 후 자연스러운
+          종료 위치를 기준으로 발생.
+        </blockquote>
+
+        <Hsnap />
+
+        <blockquote>
+          <h2>수평 전환</h2>
+          스크롤을 따라 컨텐츠가 양쪽으로 나옴
+        </blockquote>
+
+        <Gallery />
+
+        <blockquote>
+          <h2>양방향</h2>
+          양쪽으로 스크롤 이동, css에서 counter(item) 조절해야 함
+        </blockquote>
+
         <Hscroll />
       </section>
-    </>
+    </div>
   );
 }

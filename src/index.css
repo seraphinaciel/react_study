@@ -1,13 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
   html {
-    font-family: 'Roboto', system-ui, sans-serif;
+    font-family: 'Roboto', 'IBM Plex Sans KR', system-ui, sans-serif;
   }
   h1 {
-    @apply underline underline-offset-8 text-red-700 dark:text-pink-300 text-5xl;
+    @apply underline underline-offset-8 text-red-700 dark:text-pink-300 text-5xl/loose text-center;
+  }
+  blockquote {
+    @apply text-black dark:text-green-100 text-center;
+    h2 {
+      @apply text-blue-700 dark:text-blue-300 text-5xl/loose;
+    }
   }
   .basic-width {
     @apply mx-auto max-w-7xl p-6 lg:p-8;
@@ -78,7 +84,7 @@
   }
 
   /* Horizontal scroll */
-
+  /* Hscroll */
   .horizontal {
     @apply overflow-x-hidden text-gray-800 dark:text-gray-300;
     .pin-wrap,
@@ -141,7 +147,7 @@
   /* gallery 2 */
   .gallery2 {
     .gText {
-      @apply text-9xl/loose font-black;
+      @apply text-9xl/loose font-black dark:text-gray-300;
     }
     .gWrapper {
       ul {
@@ -152,6 +158,98 @@
         flex-shrink: 0;
         width: clamp(500px, 60vw, 800px);
         padding-right: 1rem;
+      }
+    }
+  }
+
+  /* gallery 3 */
+
+  .gallery3 {
+    overflow: hidden;
+    border: 1px solid yellow;
+    section {
+      width: 100vw;
+      ul {
+        padding-left: 1rem;
+        list-style: none;
+        display: flex;
+      }
+      li {
+        flex-shrink: 0;
+        width: clamp(300px, 50%, 500px);
+        height: 500px;
+        padding-right: 1rem;
+        background-color: aliceblue;
+        background-size: contain;
+      }
+    }
+  }
+
+  .ccon {
+    overscroll-behavior: none;
+    width: 600%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    .panel {
+      width: clamp(320px, 100vw / 2, 800px);
+      height: clamp(320px, 100vw / 2, 800px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1.5em;
+      text-align: center;
+      color: white;
+      position: relative;
+      box-sizing: border-box;
+      padding: 10px;
+    }
+  }
+
+  /* reveal */
+  .revealCon {
+    .feature {
+      @apply flex flex-wrap items-center mb-8;
+    }
+
+    .imgBox {
+      @apply w-4/12;
+      .card {
+        --calc: calc(100% - 10px);
+        @apply h-0 p-0 pb-[--calc] rounded-lg border border-gray-600 overflow-hidden;
+      }
+    }
+    .txtBox {
+      @apply w-7/12 ml-[8%] dark:text-gray-400 text-lg/loose;
+      h3 {
+        @apply text-4xl/loose dark:text-white;
+      }
+    }
+
+    .gs_reveal_fromRight {
+      .imgBox {
+        order: 2;
+      }
+      .txtBox {
+        margin-left: 0;
+        margin-right: 2%;
+      }
+    }
+
+    .gs_reveal {
+      opacity: 0;
+      visibility: hidden;
+      will-change: transform, opacity;
+    }
+    &.ver2 {
+      .gs_reveal_fromRight {
+        order: 2;
+      }
+      .gs_reveal_fromRight ~ .txtBox {
+        margin-left: 0;
+        margin-right: 2%;
       }
     }
   }

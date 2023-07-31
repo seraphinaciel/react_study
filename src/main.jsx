@@ -13,7 +13,9 @@ import Tab from './components/Tab';
 import Split from './components/Split';
 import Hscroll from './components/Hscroll';
 import Three from './components/Three';
+import GalleryTest from './components/GalleryTest';
 import Gallery from './components/Gallery';
+import Hsnap from './components/Hsnap';
 import Simple from './components/Simple';
 
 import Profile from './pages/Profile';
@@ -26,18 +28,6 @@ export const menuText = [
   {
     url: '/Onepage',
     title: 'Onepage',
-  },
-  {
-    url: '/Gallery',
-    title: 'Gallery',
-  },
-  {
-    url: '/Simple',
-    title: 'Simple',
-  },
-  {
-    url: '/Three',
-    title: 'Three',
   },
   {
     url: '/childPage',
@@ -95,8 +85,16 @@ const router = createBrowserRouter([
             element: <Three />,
           },
           {
+            path: '/GalleryTest',
+            element: <GalleryTest />,
+          },
+          {
             path: '/Gallery',
             element: <Gallery />,
+          },
+          {
+            path: '/Hsnap',
+            element: <Hsnap />,
           },
           {
             path: '/Simple',
