@@ -7,7 +7,7 @@ export default function App() {
     <>
       <Nav />
 
-      <main className="basic-width min-h-screen py-8">
+      <main className="min-h-screen py-8">
         <Outlet />
       </main>
 

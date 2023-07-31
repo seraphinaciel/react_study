@@ -78,73 +78,71 @@
   }
 }
 
-/* Split */
-/* .splitting .char {
-  animation: slide-in 1s cubic-bezier(0.5, 0, 0.5, 1) both;
-  animation-delay: calc(60ms * var(--char-index));
+/* Horizontal scroll */
+section {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
-@keyframes slide-in {
-  from {
-    transform: translateY(-1em) rotate(-0.5turn) scale(0.5);
-    opacity: 0;
-  }
-} */
-
-/* Scroll Trigger */
-#firstCircle {
-  background-color: yellow;
-  border-radius: 50%;
-  height: 100px;
-  width: 100px;
-  margin: 10px;
-  border: 2px solid blue;
-  margin-bottom: 30%;
+section.horizontal {
+  overflow-x: hidden;
 }
 
-#secondCircle {
-  background-color: blue;
-  border-radius: 50%;
-  height: 100px;
-  width: 100px;
-  margin: 10px;
-  border: 2px solid yellow;
-  margin-bottom: 60%;
+section.horizontal .pin-wrap,
+section.horizontal .animation-wrap {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  height: 100vh;
 }
 
-#thirdCircle {
-  background-color: black;
-  border-radius: 50%;
-  height: 100px;
-  width: 100px;
-  margin: 10px 0;
-  border: 2px solid yellow;
+section.horizontal .item {
+  position: relative;
+  padding: 150px 80px;
+  flex: 0 0 500px;
+  /* height: calc(100vh - 300px); */
+  display: flex;
+  align-items: center;
+  line-height: 1.7;
+  user-select: none;
+  border-right: 1px solid;
 }
 
-/* Three D */
-#theJ {
-  height: 1000vh;
-  canvas {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: -1;
-  }
-  .container {
-    width: 100%;
-    color: #ffffff;
-    text-align: center;
-  }
-  .text1 {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    padding: 30px;
-    font-size: 100px;
-    line-height: 100vh;
-  }
+section.horizontal .item:before {
+  position: absolute;
+  font-size: 100px;
+  opacity: 0.13;
+  font-weight: bold;
+  z-index: -1;
+  transform: translate(-30px, -50px);
+  line-height: 1;
+}
+
+section.horizontal .animation-wrap.to-right {
+  counter-reset: item;
+  float: left;
+}
+
+section.horizontal .animation-wrap.to-left {
+  counter-reset: item 11;
+  float: right;
+}
+
+section.horizontal .animation-wrap.to-right .item:before {
+  counter-increment: item;
+  content: counter(item);
+}
+
+section.horizontal .animation-wrap.to-left .item:before {
+  counter-increment: item -1;
+  content: counter(item);
+}
+
+section.horizontal .animation-wrap .item:nth-child(2n + 2) {
+  align-items: flex-start;
+}
+
+section.horizontal .animation-wrap .item:nth-child(4n + 4) {
+  align-items: flex-end;
 }

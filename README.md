@@ -84,11 +84,27 @@ export default function About() {
 
 # Green Sock
 
+[more](https://greensock.com/react-basics)
+
 ```jsx
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
+```
+
+# Splitting
+
+[more](https://splitting.js.org/)
+
+`npm i splitting -s`
+
+```jsx
+import 'splitting/dist/splitting.css';
+import 'splitting/dist/splitting-cells.css';
+import Splitting from 'splitting';
+
+Splitting();
 ```
 
 # Plugin
@@ -206,6 +222,22 @@ export default {
 name : https://tailwindcss.com/docs/{name}
 
 ex) font size : [https://tailwindcss.com/docs/font-size](https://tailwindcss.com/docs/font-size)
+
+## setting
+
+### dark mode
+
+`tailwind.config`
+
+```js
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
+  .
+  .
+  .
+}
+```
 
 ## basic
 

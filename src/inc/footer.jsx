@@ -90,7 +90,7 @@ const icons = [
 
 export default function Footer() {
   return (
-    <footer className="border-t">
+    <footer className="bg-white border-t">
       <div className="basic-width py-12 md:flex md:items-center md:justify-between md:px-8">
         <div className="flex justify-center md:order-2">
           {icons.map((icon) => (
