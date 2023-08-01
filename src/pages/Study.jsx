@@ -14,12 +14,23 @@ import CircleBox from './study/CircleBox';
 import TextLR from './study/TextLR';
 
 import SvgLine from './study/SvgLine';
+import SvgIcons from './study/SvgIcons';
 
 export default function Study() {
   return (
     <>
       <div className="h-screen"></div>
-      <SvgLine />
+      <div className={`${styles.transition} ${styles.appleBox}`}>
+        <TextReveal content="my favorite fruit is apple" />
+        <TextReveal content="my favorite fruit is apple" />
+        <SvgLine id="sStar" duration={20} delay={50} />
+      </div>
+      <div className="h-screen"></div>
+      <SvgLine id="sStar" duration={10} />
+      <SvgLine id="sStar" duration={10} />
+      <SvgLine id="sArrow" duration={10} />
+      <SvgLine id="sHand" duration={10} />
+      <SvgIcons />
       {/* <ImgSplit /> */}
       <div className="h-screen"></div>
       <TextLR id="out" conLeft="GET ON THE" conRight="ELEVATOR" />

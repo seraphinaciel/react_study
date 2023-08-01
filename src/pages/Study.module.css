@@ -115,5 +115,27 @@
     stroke: #f7f7f7;
   }
 }
-#starsvg {
+.starsvg {
+}
+
+.svgIcons {
+  /* @apply bg-yellow-200; */
+  animation: rotatei 15s linear infinite;
+}
+@keyframes rotatei {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(365deg);
+  }
+}
+
+.appleBox {
+  @apply relative;
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
