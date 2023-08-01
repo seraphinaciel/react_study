@@ -24,7 +24,6 @@ const BoxContainer = ({ id, imgSrc, alt }) => {
       .to('.box', { scale: scale, duration: 4, ease: 'none' })
       .to('body', { duration: 1 });
 
-    console.log(id);
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
