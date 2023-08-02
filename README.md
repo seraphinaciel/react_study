@@ -1,3 +1,9 @@
+# pre-rendering
+
+[react-hydratable](https://satisfactoryplace.tistory.com/348)
+[react-snap](https://narup.tistory.com/265#----%--react-snap)
+[seo 도전기?](https://headwing.tistory.com/77)
+
 # Green Sock
 
 [react](https://greensock.com/react-basics)
@@ -144,3 +150,21 @@ Splitting();
 
 https://css-tricks.com/scroll-drawing/
 https://jakearchibald.com/2013/animated-line-drawing-svg/
+
+### root만 vw로 만들고 아래는 rem을 쓰는 방법
+
+```css
+html {
+  font-size: calc(10 * (100vw / var(--size)));
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+:root {
+  --size: 390;
+}
+@media (min-width: 650px) {
+  :root {
+    --size: 1500;
+  }
+}
+```
