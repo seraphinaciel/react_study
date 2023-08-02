@@ -1,7 +1,9 @@
 # pre-rendering
 
 [react-hydratable](https://satisfactoryplace.tistory.com/348)
+
 [react-snap](https://narup.tistory.com/265#----%--react-snap)
+
 [seo 도전기?](https://headwing.tistory.com/77)
 
 # Green Sock
