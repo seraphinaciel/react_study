@@ -1,4 +1,8 @@
-# pre-rendering
+# ...
+
+8/2 : vite-plugin-ssr 안됨 (\_default.page.client 등등...)
+
+### pre-rendering
 
 [react-hydratable](https://satisfactoryplace.tistory.com/348)
 
