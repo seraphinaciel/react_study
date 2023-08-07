@@ -26,9 +26,9 @@ export default function Study() {
         <SvgLine id="sStar" duration={20} delay={50} />
       </div>
       <div className="h-screen"></div>
-      <SvgLine id="sStar" duration={10} />
-      <SvgLine id="sStar" duration={10} />
-      <SvgLine id="sArrow" duration={10} />
+      <SvgLine id="sStar" duration={50} />
+      <SvgLine id="sStar" duration={50} />
+      <SvgLine id="sArrow" duration={50} />
       <SvgLine id="sHand" duration={10} />
       <SvgIcons />
       {/* <ImgSplit /> */}
